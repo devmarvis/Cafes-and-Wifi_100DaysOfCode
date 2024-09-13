@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Float, Boolean
@@ -100,5 +100,20 @@ def remove(cafe_name):
     return redirect(url_for('cafes'))
 
 
+#
+@app.route("/search")
+def search():
+    location = request.args.get('loc')
+    with app.app_context():
+        result = db.session.execute(db.select(Cafe).where(Cafe.location == location)).scalar()
+        if result:
+            return jsonify(cafe=result.to_dict(), mimetypes="application/json")
+        else:
+            err_msg = {
+                "Not found": "Sorry we do not have a cafe at that location."
+            }
+            return jsonify(error=err_msg)
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
