@@ -6,19 +6,50 @@
         <div class="row justify-content-left">
             <h4 class="mb-4 text-center">Enter Cafe's Details</h4>
             <div class="col-12 col-lg-6">
-                <form>
+                <form method="POST" action="{{ url_for('add_cafe') }}">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
                     <input type="text" class="form-control" name="cafe_name" placeholder="Enter cafe's name">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Location</label>
-                    <input type="text" class="form-control" name="cafe_name" placeholder="Enter cafe's location">
+                    <input type="text" class="form-control" name="cafe_location" placeholder="Enter cafe's location">
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Url</label>
-                    <input type="text" class="form-control" name="cafe_name" placeholder="Enter cafe's url">
+                    <label for="exampleInputEmail1" class="form-label">Map Url</label>
+                    <input type="text" class="form-control" name="cafe_url" placeholder="Enter cafe's map url">
                   </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Image Url</label>
+                    <input type="text" class="form-control" name="cafe_img" placeholder="Enter cafe's image url">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Price</label>
+                    <input type="text" class="form-control" name="coffee_price" placeholder="Enter cafe's coffee price">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Toilets (0 for NO, 1 for YES)</label>
+                    <input type="text" class="form-control" name="toilets_aval" placeholder="Does cafe have toilets">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Sockets (0 for NO, 1 for YES)</label>
+                    <input type="text" class="form-control" name="sockets_aval" placeholder="Does cafe have sockets">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">WiFi (0 for NO, 1 for YES)</label>
+                    <input type="text" class="form-control" name="wifi_aval" placeholder="Does cafe have wifi">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Calls (0 for NO, 1 for YES)</label>
+                    <input type="text" class="form-control" name="calls_allow" placeholder="Does cafe allow calls">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Seats</label>
+                    <input type="text" class="form-control" name="seats_capacity" placeholder="Enter cafe's seat capacity">
+                  </div>
+                  <button type="submit">
+                      Save
+                  </button>
                 </form>
             </div>
         </div>

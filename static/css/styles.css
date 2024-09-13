@@ -1,3 +1,23 @@
 .primary {
     color: brown !important;
 }
+
+.danger {
+    color: red;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.map-view {
+    text-decoration: none;
+}
+
+.map-view:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.danger:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

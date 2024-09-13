@@ -16,7 +16,7 @@
                         </div>
                         <div class="row">
                             <p class="card-text col-6"><em>Location:</em> {{ cafe.location }}</p>
-                            <a class="underlined pointer col-6" href="{{ cafe.map_url }}" target="_blank">View Map</a>
+                            <a class="underlined pointer col-6 map-view" href="{{ cafe.map_url }}" target="_blank">View Map</a>
                         </div>
                         <ul class="list-unstyled">
                             <li><em>Seats:</em> {{ cafe.seats }}</li>
@@ -24,7 +24,10 @@
                             <li><em>WiFi:</em> {{ 'YES' if cafe.has_wifi == 1 else 'NO' }}</li>
                             <li><em>Allows Calls:</em> {{ 'YES' if cafe.can_take_calls == 1 else 'NO' }}</li>
                         </ul>
-                        <p><em>Price:</em> <strong>{{ cafe.coffee_price }}</strong></p>
+                        <div>
+                            <p><em>Price:</em> <strong>{{ cafe.coffee_price }}</strong></p>
+                            <a class="danger underlined-none" href="{{ url_for('remove', cafe_name=cafe.name) }}">remove</a>
+                        </div>
                       </div>
                     </div>
                 </div>
